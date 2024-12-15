@@ -4,7 +4,7 @@ applies an extracted image "style" onto another
 
 Canvas image:
 
-![image](https://github.com/user-attachments/assets/8363afc8-9e3d-4143-a3f2-9b13ca391fed)
+![image](https://github.com/user-attachments/assets/709e4336-c922-475f-8be9-3f78d3dc6b81)
 
 
 Style image:
