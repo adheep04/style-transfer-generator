@@ -1,0 +1,113 @@
+__________________model___________________________
+- no fully connected layers
+- max pooling -> avg pooling
+- VGG-19 layers
+
+each layer
+- produces F^l (num_filters(N), height_x_width(M))
+  - N = num filters
+  - M = content/image dimensions
+  - F_ij = value of i-th filter response in content position j
+- produces G^l (num_filters(N), num_filters(N)) (correlation matrix between filters in layer)
+  - 
+
+
+
+- CONTENT RECREATION:
+- **what has worked**
+  - NORMALIZING THE LOSS
+  - SHALLOWER LAYER
+
+- trial 1
+  - yea
+- trial 2
+  - changed layer from 3 -> 1?
+  - normalized loss
+- trial 3
+  - it was the layer number not the normalization that made the difference :(
+- trial 4
+  - weight decay fucked it up?
+  - changed weight decay from 0.04 -> 0.0001
+- trial 5
+  - best one yet!
+  - the weight decay change helped a lot
+  - using layer 1 helps a lot too.
+  - let me see what increasing the learning rate does
+- trial 7
+  - wow increasing the learning rate did a lot, let me see how much further I can take this
+  - lr 0.1 -> 1.4
+  - converging even faster than trial 5
+  - loss at 11260: 7239
+- trial 7_2
+  - changes:
+    - lr 1.4 -> 1.6
+    - scheduler -> 0.8 -> 0.9
+  - observations:
+    - stopped early, more noisy, forgot too change trial number
+- trial 8
+  - changes:
+    - optimizer: Adam -> LBFGS
+    - lr .13 -> .12
+    - scheduler -> None
+  - observations:
+    - converged very fast
+    - loss went lower than trial 7 but results were worse
+- trial 9
+  - changes:
+    - lr 0.12 -> 0.08
+  - observations:
+    - not as good as adam so far
+- trial 10
+  - changes:
+    - max_iter: 30 -> 15
+  - observations:
+    - not really helping
+- trial 11
+  - changes:
+    - lr 0.08 -> 0.15
+  - observations:
+    - fuck LBFGS going back to adam
+- trial 12
+  - changes:
+    - **changed sum of loss to mean**
+  - observations:
+    - **very interesting** -> after defining loss as the mean instead of sum of squared error, images produces now appear more saturated and purple in color
+- trial 12
+  - changes:
+    - **added mean loss to denominator for loss**
+  - observations:
+    - convergence happened much faster but quality of convergence remained the same
+
+- later trials:
+  - observations/changes:
+    - **added normalization and mean subtraction** <-- FIXED KEY ERRORS
+      - **was the thing that was causing all the errors**
+    - **used non-white noise initialization**
+      - unsure of effectiveness
+    - **higher learning rate (0.2) allows for quick and accurate convergence**
+
+  - insights:
+    - high loss -> BAD, harder to converge
+    - white noise randint[0, 255] converges slower than rand[0, 1] 
+      - (twice as slow)
+
+
+
+STYLE RECREATION:
+
+trial 1
+- paper's alpha/beta ratio does not work
+
+observations:
+- my beta value was dominating the loss so I made alpha 1 and beta 1e-5 
+  - the paper had it the opposite, maybe the style representation layer should've been normalized or something
+
+
+
+
+
+
+
+
+
+    
