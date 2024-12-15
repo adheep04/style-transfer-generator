@@ -84,15 +84,10 @@ def replicate_style(
     lr=config['lr'], 
     factor=config['scheduler'],
     patience=config['patience'],
-    use_mse=False 
     ):
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
-    
-    # Define a loss function
-    loss_fn = loss_fn
-    loss_fn_mse = nn.MSELoss()
     
     # generate blank brown image as vectors
     pred_params = torch.rand(1, 3, 224, 224, device=device) 
