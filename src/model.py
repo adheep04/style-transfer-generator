@@ -212,4 +212,3 @@ class Img():
 
         # returns a an image given a torch tensor
         return Image.fromarray(array.astype(np.uint8))
-        
