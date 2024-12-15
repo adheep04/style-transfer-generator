@@ -1,6 +1,8 @@
 implementation of the attached ML paper: A Neural Algorithm of Artistic Style in PyTorch from scratch,
 applies an extracted image "style" onto another
 
+EXAMPLE:
+
 content image:
 
 ![image](https://github.com/user-attachments/assets/709e4336-c922-475f-8be9-3f78d3dc6b81)
