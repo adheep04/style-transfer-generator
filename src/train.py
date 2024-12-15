@@ -229,4 +229,4 @@ def content_recreation(
         
     return pred_params.float()
 
-replicate_style(Image.open(config['content_path']), Image.open(config['style_path']), use_mse=False)
+replicate_style(Image.open(config['content_path']), Image.open(config['style_path']))
