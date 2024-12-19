@@ -1,7 +1,7 @@
-implementation of the attached ML paper: A Neural Algorithm of Artistic Style in PyTorch from scratch,
+custom reimplementation of the attached ML paper: A Neural Algorithm of Artistic Style in PyTorch from scratch,
 applies an extracted image "style" onto another
 
-EXAMPLE:
+EXAMPLE RESULT:
 
 content image:
 
