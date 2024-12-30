@@ -16,3 +16,10 @@ style image:
 stylized content:
 
 ![im_376](https://github.com/user-attachments/assets/4c894805-8c26-4794-a00b-3bed3eaaa60a)
+
+ex2:
+![style_6](https://github.com/user-attachments/assets/1482b765-7207-4525-8ef9-937ce9e54fcc)
+![content_1](https://github.com/user-attachments/assets/0c776a78-d35a-478d-ae81-7330f115b8ab)
+![im_650](https://github.com/user-attachments/assets/1b427d00-c316-4baa-b60c-3859bbb10812)
+
+
